@@ -1,33 +1,52 @@
-variable "aws_region" {
-  description = "The AWS region to create things in."
-  default     = "us-east-1"
+variable awx_user {}
+variable awx_pwd {}
+variable awx_host {}
+variable awx_insecure {}
+variable awx_template_id {}
+variable awx_inventory_name {}
+variable awx_inventory_group_name {}
+variable awx_organization_name{}
+
+variable aws_region {}
+variable aws_account_id {}
+variable aws_role_name {}
+variable ec2_key_name {}
+variable ec2_public_ip {}
+variable ec2_base_name {}
+variable ec2_root_volume_size { type = list }
+variable ec2_root_volume_size_win { type = list }
+variable ec2_root_volume_type {}
+variable ec2_root_kms_id {}
+
+variable ansible_win_user {
+    sensitive = true
+}
+variable ansible_win_pwd {
+    sensitive = true
 }
 
-variable "key_name" {
-  description = " SSH keys to connect to ec2 instance"
-  default     =  "myJune2021Key"
+variable domain_user {
+    sensitive = true
 }
 
-variable "instance_type" {
-  description = "instance type for ec2"
-  default     =  "t2.micro"
+variable domain_pwd {
+    sensitive = true
+} 
+
+# TAGS
+variable aws_so {}
+variable aws_so_win {}
+variable aws_n {}
+variable aws_env {}
+variable aws_pais {}
+variable aws_servicio {}
+
+variable "configuration" {
+  description = "Configuracion de Instancias Linux"
+  default = [{}]
 }
 
-variable "security_group" {
-  description = "Name of security group"
-  default     = "sg-07a89f708579b7195"
-}
-
-variable "tag_name" {
-  description = "Tag Name of for Ec2 instance"
-  default     = "my-ec2-instance"
-}
-
-variable "ami_id" {
-  description = "AMI for Ubuntu Ec2 instance"
-  default     = "ami-04505e74c0741db8d"
-}
-
-variable "subnet_id" {
-default    = "subnet-008bc63771325eef8"
+variable "configuration_win" {
+  description = "Configuracion de Instancias Windows"
+  default = [{}]
 }

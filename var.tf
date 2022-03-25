@@ -29,5 +29,5 @@ variable "ami_id" {
 }
 
 variable "subnet_id" {
-default    = "subnet-0b53a6ae43e71d4b3"
+default    = "subnet-008bc63771325eef8"
 }

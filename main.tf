@@ -8,7 +8,7 @@ resource "aws_instance" "myFirstInstance" {
   #key_name = var.key_name
   instance_type = var.instance_type
   security_groups = [var.security_group]
-  subnet_id = "subnet-0b53a6ae43e71d4b3" 
+  subnet_id = "subnet-008bc63771325eef8" 
   tags= {
     Name = var.tag_name
   }

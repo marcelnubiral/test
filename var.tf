@@ -27,3 +27,7 @@ variable "ami_id" {
   description = "AMI for Ubuntu Ec2 instance"
   default     = "ami-04505e74c0741db8d"
 }
+
+variable "subnet_id" {
+default    = "subnet-0b53a6ae43e71d4b3"
+}

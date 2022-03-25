@@ -1,10 +1,15 @@
 provider "aws" {
-  region = "us-east-1"
-  // assume_role {
-  //   role_arn = "arn:aws:iam::${var.aws_account_id}:role/${var.aws_role_name}"
+  region = var.aws_region
+}
+
+# Create AWS ec2 instance
+resource "aws_instance" "myFirstInstance" {
+  ami           = var.ami_id
+  #key_name = var.key_name
+  instance_type = var.instance_type
+  security_groups= [var.security_group]
+  tags= {
+    Name = var.tag_name
   }
 }
-resource "aws_instance" "web1" {
-   ami           = "ami-089582bef738dbf6a"
-   instance_type = "t2.micro"
- }
+
